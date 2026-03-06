@@ -235,7 +235,7 @@ input[type="text"]::placeholder {
     z-index: 1000;
     width: 300px;
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: flex-end;
 }
 
@@ -247,6 +247,8 @@ input[type="text"]::placeholder {
     font-size: .8rem;
     font-weight: 700;
     cursor: pointer;
+     align-self: flex-end;
+    
 }
 
 .chat-content {
@@ -262,6 +264,11 @@ input[type="text"]::placeholder {
     display: block;
 }
 
+.chat-content:target ~ .chat {
+    align-self: flex-start;
+    
+}
+
 .close-btn {
     background-color: transparent;
     border: none;
@@ -269,8 +276,8 @@ input[type="text"]::placeholder {
     font-size: 1.2rem;
     cursor: pointer;
     position: absolute;
-    top: -20px;
-    right: -12px;
+    top: 5px;
+    right: 215px;
 }
 
 /* MOBILE - tablets and below */
