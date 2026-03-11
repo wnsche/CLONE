@@ -91,6 +91,10 @@ header {
 /* mobile */
 @media (max-width: 480px) {
 
+  body {
+    background-color: #f3ecec;
+  }
+
   /* show burger button */
   #menu-btn {
   text-decoration: none;
