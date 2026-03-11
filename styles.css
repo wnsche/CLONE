@@ -66,29 +66,9 @@ header {
   padding-bottom: 10px;
 }
 
-@media (max-width: 768px) {
-  #navbar {
-    width: 150px;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    font-size: 0.75rem;
-  }
-
-  .nav-link {
-    padding: 6px 8px;
-  }
-
-  #main-doc {
-    padding: 10px;
-    margin-left: 160px;
-    width: calc(100% - 160px);
-  }
-}
 
 /* mobile */
-@media (max-width: 560px) {
+@media (max-width: 768px) {
 
   body {
     background-color: #f3ecec;
