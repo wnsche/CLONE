@@ -66,7 +66,7 @@ header {
 }
 
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
     body {
         margin: 0;
@@ -75,23 +75,22 @@ header {
 
 #navbar {
     position: fixed;
-  width: 200px;
+  width: 150px;
   height: 100vh;
-
-  font-size: 0.9rem;
+  font-size: 0.75 rem;
   top: 0;
   left: 0;
 
 }
 
 .nav-link {
-  padding: 8px 10px;
+  padding: 6px 8px ;
 }
 
 #main-doc {
     padding: 10px;
     margin-left: 210px;
-     width: calc(100% - 220px);  /* matches the margin */
+     width: calc(100% - 170px);  /* matches the margin */
     
   }
 
