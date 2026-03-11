@@ -11,6 +11,15 @@ body {
   padding: 0;
 }
 
+/* hide menu button on desktop */
+#menu-btn {
+  display: none;
+}
+
+/* hide close button always by default */
+#close-btn {
+  display: none;
+}
 
 header {
   font-weight: bold;
@@ -20,10 +29,9 @@ header {
 #main-doc {
   display: flex;
   flex-direction: column;
-   margin-left: 320px;
-   padding: 20px;
+  margin-left: 320px;
+  padding: 20px;
   width: calc(100% - 340px);
-
 }
 
 #main-doc > section {
@@ -34,22 +42,18 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  margin-right: 50px;
   border-right: 2px solid gray;
-  position: fixed;  
+  position: fixed;
   height: 100vh;
-  width: 300px; 
+  width: 300px;
   overflow-y: auto;
   top: 0;
   left: 0;
-  
 }
 
 #navbar > header {
   padding: 20px;
- 
   white-space: nowrap;
-  
 }
 
 .nav-link {
@@ -60,18 +64,17 @@ header {
   padding-left: 10px;
   padding-top: 10px;
   padding-bottom: 10px;
-  
 }
 
-
+/* tablet */
 @media (max-width: 768px) {
   #navbar {
-    position: fixed;
     width: 150px;
     height: 100vh;
-    font-size: 0.75rem;
+    position: fixed;
     top: 0;
     left: 0;
+    font-size: 0.75rem;
   }
 
   .nav-link {
@@ -85,30 +88,64 @@ header {
   }
 }
 
-
+/* mobile */
 @media (max-width: 480px) {
+
+  /* show burger button */
+  #menu-btn {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  display: block;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  font-size: 1.5rem;
+  z-index: 999;  /* LOWER than navbar */
+}
+
+#navbar:target {
+  z-index: 1000;  /* navbar covers the burger button */
+}
+
+  /* hide navbar by default */
   #navbar {
-    position: fixed;
-    width: 120px;
+    display: none;
+  }
+
+  /* show navbar when open */
+  #navbar:target {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
     height: 100vh;
-    font-size: 0.7rem;
+    position: fixed;
     top: 0;
     left: 0;
+    font-size: 0.9rem;
+    overflow-y: auto;
+    background-color: #f3ecec;
   }
 
-  #navbar > header {
-    font-size: 0.85rem;
+  /* show close button only when navbar is open */
+  #navbar:target #close-btn {
+    display: block;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+    font-size: 1.5rem;
     padding: 10px;
-    white-space: nowrap;
+    text-align: right;
   }
 
-  .nav-link {
-    padding: 5px 6px;
+  /* hide burger button when navbar is open */
+  #navbar:target ~ * #menu-btn {
+    display: none;
   }
 
   #main-doc {
-    margin-left: 130px;
+    margin-left: 0;
+    width: 100%;
     padding: 8px;
-    width: calc(100% - 130px);
   }
 }
